@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja" class="h-100">
+  <head>
+    <title>被サイト: X-Frame-Options設定なし</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="src/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body class="d-flex flex-column h-100">
+    <!-- header -->
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">被サイト</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">ホーム</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">アカウント</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            <input
+              class="form-control mr-sm-2"
+              type="text"
+              placeholder="検索"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              検索
+            </button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <!-- main content -->
+    <main role="main" style="padding-top: 80px;">
+      <div class="container">
+        <h4>アカウント削除</h4>
+        <form
+          id="delete-form"
+          class="form-inline mt-2 mt-md-0"
+          action="target2.html"
+          method="post"
+        >
+          <!-- csrf token: 実際には毎回変わる -->
+          <input
+            class="form-control"
+            name="csrf-token"
+            type="hidden"
+            value="AU9XDw7PPhDaUZXRpRvEk9ZC8UGhj4pW"
+          />
+          <button
+            class="btn btn-danger my-2 my-sm-0"
+            type="button"
+            data-toggle="modal"
+            data-target="#confirm-form"
+          >
+            削除
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <span class="text-muted">footer</span>
+      </div>
+    </footer>
+
+    <!-- modal -->
+    <div id="confirm-form" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">確認</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>本当に削除しますか？</p>
+            <p>
+              ※アカウントを削除すると、このアカウントに紐づいているすべての情報が削除されます。
+            </p>
+            <p>※この処理は元に戻せません。</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              いいえ
+            </button>
+            <button id="delete-btn" type="button" class="btn btn-danger">
+              はい
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- scripts -->
+    <script type="text/javascript" src="src/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="src/js/bootstrap.min.js"></script>
+    <script>
+      $("#delete-btn").click(() => {
+        $("#delete-form").submit();
+      });
+    </script>
+  </body>
+</html>

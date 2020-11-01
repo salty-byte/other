@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>罠サイト</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      #touka {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        opacity: 0;
+        z-index: 10;
+      }
+
+      #opacity-controller {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 11;
+      }
+
+      #container {
+        padding: 0;
+        height: 600px;
+        background-image: url("src/image/bg.jpg");
+      }
+
+      #container .message {
+        position: absolute;
+        top: 30px;
+        left: 80px;
+        white-space: nowrap;
+      }
+
+      #container .button1 {
+        position: absolute;
+        width: 70px;
+        height: 45px;
+        top: 115px;
+        left: 80px;
+        white-space: nowrap;
+      }
+
+      #container .button2 {
+        position: absolute;
+        display: none;
+        width: 70px;
+        height: 45px;
+        top: 280px;
+        left: 600px;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p class="message">点滅している２つのボタンを順番に押してください。</p>
+      <button class="button1">1</button>
+      <button class="button2">2</button>
+    </div>
+    <iframe id="touka" src="target.html" width="860px" height="99%"></iframe>
+    <div id="opacity-controller">
+      <button type="button" id="up" onclick="up()">+</button>
+      <button type="button" id="down" onclick="down()">-</button>
+    </div>
+
+    <script type="text/javascript" src="src/js/jquery-3.4.1.min.js"></script>
+    <script>
+      let opacity = 0.0;
+      let isFirst = true;
+      function up() {
+        opacity = Math.min(opacity + 0.1, 1.0);
+        $("#touka").css("opacity", opacity);
+      }
+
+      function down() {
+        opacity = Math.max(opacity - 0.1, 0.0);
+        $("#touka").css("opacity", opacity);
+      }
+
+      function update() {
+        $(".button1").css("display", isFirst ? "none" : "block");
+        $(".button2").css("display", isFirst ? "block" : "none");
+        isFirst = !isFirst;
+      }
+
+      $(function () {
+        setInterval(() => update(), 1000);
+      });
+    </script>
+  </body>
+</html>
