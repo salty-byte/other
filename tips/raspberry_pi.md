@@ -66,7 +66,7 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage modules dtbs
 git clone https://github.com/RinCat/RTL88x2BU-Linux-Driver
 ```
 
-- ドライバビルド
+- ビルド
 
 ```
 cd RTL88x2BU-Linux-Driver
@@ -97,7 +97,37 @@ insmod 88x2bu.ko
 rmmod 88x2bu.ko
 ```
 
+**ドライバ自動起動** (on Raspberry Pi 4)
+
+- ビルドしたドライバの配置
+
+```
+cp 88x2bu.ko /lib/modules/$(uname -r)/kernel/drivers/.
+```
+
+- 依存関係の更新
+
+現在のカーネルの依存関係を更新する。
+
+```
+depmod
+```
+
+`/lib/modules` 内の別バージョンのカーネルの依存関係を更新する。  
+※Raspberry Pi 4 で Raspberry Pi 3, Zero 等の他のバージョンに対して変更を加えたい場合に利用する。
+
+```
+depmod 5.10.11-v7+
+```
+
+- 自動起動の設定
+
+```
+bash -c 'echo "88x2bu" >> /etc/modules-load.d/modules.conf'
+```
+
 ## 参考文献
 
 - https://www.raspberrypi.org/documentation/linux/kernel/building.md
 - https://nw-electric.way-nifty.com/blog/2020/02/post-d872db.html
+- https://qiita.com/iwatake2222/items/b9dd02724e83e36dabc3
