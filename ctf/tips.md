@@ -13,3 +13,20 @@ openssl rsa -in <private-key.pem> -text -noout
 ```
 openssl rsa -pubin -in <public-key.pem> -text -noout
 ```
+
+## DNS
+
+dig
+
+```
+dig <example.com> IN
+dig <example.com> ANY
+dig <example.com> TXT
+```
+
+## Phishing
+
+- MX (Mail exchange record)
+- SPF (Sender Policy Framework)
+- DKIM (DomainKeys Identified Mail)
+- DMARC (Domain-based Message Authentication, Reporting and Conformance)
