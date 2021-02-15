@@ -30,3 +30,14 @@ dig <example.com> TXT
 - SPF (Sender Policy Framework)
 - DKIM (DomainKeys Identified Mail)
 - DMARC (Domain-based Message Authentication, Reporting and Conformance)
+
+## OSINT
+
+- Google Dorks: https://www.exploit-db.com/google-hacking-database
+
+  - ext: `ext:(doc | pdf | xls | txt)`
+  - filetype: `filetype:log`
+  - intext: `intext:"Control Panel"`
+  - intitle: `intitle:"Manager"`
+  - inurl: `inurl:index.php`
+  - site: `site:ftp.*.*.*`
