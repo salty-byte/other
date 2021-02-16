@@ -41,3 +41,12 @@ dig <example.com> TXT
   - intitle: `intitle:"Manager"`
   - inurl: `inurl:index.php`
   - site: `site:ftp.*.*.*`
+
+## Databases
+
+- Default Passwords: https://cirt.net/passwords
+- Exploit: https://www.exploit-db.com/
+
+## Sites
+
+- requestbin: https://requestbin.com/
