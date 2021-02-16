@@ -42,10 +42,18 @@ dig <example.com> TXT
   - inurl: `inurl:index.php`
   - site: `site:ftp.*.*.*`
 
+## SSTI
+
+**Server Side Template Injection**
+
+- https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection
+
 ## Databases
 
 - Default Passwords: https://cirt.net/passwords
 - Exploit: https://www.exploit-db.com/
+- ## Shodan:
+  - https://exploits.shodan.io/welcome
 
 ## Sites
 
