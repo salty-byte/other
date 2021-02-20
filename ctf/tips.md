@@ -58,8 +58,10 @@ Jinja2
 
 - Default Passwords: https://cirt.net/passwords
 - Exploit: https://www.exploit-db.com/
-- ## Shodan:
-  - https://exploits.shodan.io/welcome
+
+## Shodan:
+
+- https://exploits.shodan.io/welcome
 
 ## Sites
 
