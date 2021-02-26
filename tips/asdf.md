@@ -41,3 +41,19 @@ asdf plugin add python
 asdf install python 3.8.7
 asdf global python 3.8.7
 ```
+
+**PHP**
+
+Install dependencies:
+
+```
+apt install -y autoconf bison re2c libcurl4-openssl-dev libgd-dev libonig-dev libpq-dev libzip-dev
+```
+
+Install PHP:
+
+```
+asdf plugin add php
+asdf install php 8.0.2
+asdf global php 8.0.2
+```
