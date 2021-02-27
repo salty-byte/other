@@ -60,6 +60,18 @@ Jinja2
 
 - LIKE: `%`, `*`
 
+**MySQL**
+
+| 説明       | SQL                         |
+| ---------- | --------------------------- |
+| コメント   | `-- ` or `#` or `/* ... */` |
+| If         | CASE                        |
+| 文字列結合 | &#124;&#124;                |
+|            | CONCAT(x, y, ...)           |
+|            | GROUP_CONCAT(x, y, ...)     |
+| 部分文字列 | SUBSTRING(x, index, length) |
+| 長さ       | LENGTH(stuff)               |
+
 **SQLite3**
 
 | 説明                   | SQL                               |
