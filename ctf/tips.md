@@ -1,5 +1,7 @@
 # tips
 
+CTF や HackTheBox で使う情報を自分用にまとめる。
+
 ## RSA
 
 秘密鍵の中身を見る
