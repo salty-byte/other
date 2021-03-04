@@ -188,15 +188,19 @@ Bypass:
 - to Hex: `(` => `\\x28`
 - to Octal: `(` => `\50`
 
-## Databases
+## Sites
+
+**Databases**
 
 - Default Passwords: https://cirt.net/passwords
 - Exploit: https://www.exploit-db.com/
+- Shodan: https://exploits.shodan.io/welcome
 
-## Shodan:
+**Payloads**
 
-- https://exploits.shodan.io/welcome
+- https://github.com/swisskyrepo/PayloadsAllTheThings
 
-## Sites
+**Tools**
 
-- requestbin: https://requestbin.com/
+- CyberChef: https://gchq.github.io/CyberChef/
+- Request Bin: https://requestbin.com/
