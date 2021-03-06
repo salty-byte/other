@@ -204,3 +204,7 @@ Bypass:
 
 - CyberChef: https://gchq.github.io/CyberChef/
 - Request Bin: https://requestbin.com/
+
+**Documents**
+
+- HackTricks: https://book.hacktricks.xyz/
