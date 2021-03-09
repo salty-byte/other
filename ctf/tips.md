@@ -272,6 +272,7 @@ https://github.com/D35m0nd142/LFISuite
 
 - CyberChef: https://gchq.github.io/CyberChef/
 - Request Bin: https://requestbin.com/
+- IP アドレス情報: https://ip-api.com/
 
 **Documents**
 
