@@ -126,17 +126,20 @@ dig <example.com> TXT
 
 **SQLite3**
 
-| 説明                   | SQL                               |
-| ---------------------- | --------------------------------- |
-| コメント               | --                                |
-| If                     | CASE                              |
-| 文字列結合             | &#124;&#124;                      |
-| 部分文字列             | substr(x,y,z)                     |
-| 長さ                   | length(stuff)                     |
-| シングルクォートの生成 | select substr(quote(hex(0)),1,1); |
-| ダブルクォートの生成   | select cast(X'22' as text);       |
+| 説明                   | SQL                                     |
+| ---------------------- | --------------------------------------- |
+| コメント               | --                                      |
+| If                     | CASE name WHEN 'taro' THEN 1 ELSE 0 END |
+| 文字列結合             | &#124;&#124;                            |
+| 部分文字列             | substr(x,y,z)                           |
+| 長さ                   | length(stuff)                           |
+| シングルクォートの生成 | select substr(quote(hex(0)),1,1);       |
+| ダブルクォートの生成   | select cast(X'22' as text);             |
 
-参考: http://atta.cked.me/home/sqlite3injectioncheatsheet
+参考:
+
+- http://atta.cked.me/home/sqlite3injectioncheatsheet
+- https://www.sqlite.org/lang_UPSERT.html
 
 ## Command Injection
 
