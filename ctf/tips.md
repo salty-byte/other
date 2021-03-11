@@ -259,6 +259,28 @@ https://github.com/D35m0nd142/LFISuite
 - https://book.hacktricks.xyz/pentesting-web/file-inclusion
 - https://highon.coffee/blog/lfi-cheat-sheet/
 
+## Server Side Request Forgery (SSRF)
+
+クライアント -> サーバ -> 別サーバ  
+外部からアクセスできるサーバを踏み台として、本来外部からアクセスできないサーバに対して行う攻撃。
+
+**Node.js**
+
+CRLF の挿入。
+
+- CR: `\r`
+- LF: `\n`
+
+Unicode を利用して CRLF を挿入する。
+
+- CR: `\uff0d`
+- LF: `\uff0a`
+- 空白: `\uff20`
+
+参考:
+
+- https://cheatsheetseries.owasp.org/assets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet_Orange_Tsai_Talk.pdf
+
 ## Sites
 
 **Databases**
