@@ -291,7 +291,8 @@ Unicode を利用して CRLF を挿入する。
 
 **Payloads**
 
-- https://github.com/swisskyrepo/PayloadsAllTheThings
+- PayloadsAllTheThings: https://github.com/swisskyrepo/PayloadsAllTheThings
+- GTFOBins: https://gtfobins.github.io/
 
 **Tools**
 
