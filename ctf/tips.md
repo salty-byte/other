@@ -281,6 +281,16 @@ Unicode を利用して CRLF を挿入する。
 
 - https://cheatsheetseries.owasp.org/assets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet_Orange_Tsai_Talk.pdf
 
+## Pwn
+
+pwn 用のまとめ:
+
+ユーザーに許可されている sudo で実行可能なコマンドの表示
+
+```
+sudo -l
+```
+
 ## Sites
 
 **Databases**
