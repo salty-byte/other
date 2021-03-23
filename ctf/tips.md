@@ -304,6 +304,10 @@ sudo -l
 - PayloadsAllTheThings: https://github.com/swisskyrepo/PayloadsAllTheThings
 - GTFOBins: https://gtfobins.github.io/
 
+**List**
+
+- Chr: https://testguild.com/qtp-ascii-chr-code-chart/
+
 **Tools**
 
 - CyberChef: https://gchq.github.io/CyberChef/
