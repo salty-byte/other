@@ -291,6 +291,20 @@ pwn 用のまとめ:
 sudo -l
 ```
 
+## Steganography
+
+- steghide
+
+秘密のパスフレーズでファイルからシークレット情報を取得する。
+
+```
+steghide info target.jpg
+```
+
+```
+steghide extract -sf target.jpg
+```
+
 ## Sites
 
 **Databases**
