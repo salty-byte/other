@@ -1,5 +1,17 @@
 # bash tips(HTB/CTF 用)
 
+## locate
+
+ファイル名検索
+
+```
+# 通常
+locate .config
+
+# 大文字小文字区別なし
+locate -i .config
+```
+
 ## BASE64
 
 Encode
