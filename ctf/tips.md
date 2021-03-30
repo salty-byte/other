@@ -2,6 +2,45 @@
 
 CTF や HackTheBox で使う情報を自分用にまとめる。
 
+## Privilege Escalation
+
+権限昇格に利用できそうな手がかりを見つける
+
+```
+# root で動いているプロセスの一覧を表示
+ps aux | grep root
+```
+
+```
+# 現在のユーザで sudo 利用可能なコマンドを表示
+sudo -l
+```
+
+```
+# ユーザ + パスワードハッシュ
+cat /etc/passwd
+```
+
+```
+# cron の設定を表示
+ls -la /etc/cron.daily/
+```
+
+```
+# HDD や USB メモリなどのブロックデバイスの一覧を表示
+lsblk
+```
+
+```
+# 書き込み可能なディレクトリを検索
+find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null
+
+# 書き込み可能なファイルを検索
+find / -path /proc -prune -o -type f -perm -o+w 2>/dev/null
+```
+
+参考: https://academy.hackthebox.eu/course/preview/linux-privilege-escalation/introduction-to-linux-privilege-escalation
+
 ## RSA
 
 秘密鍵の中身を見る
