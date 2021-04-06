@@ -39,7 +39,31 @@ find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null
 find / -path /proc -prune -o -type f -perm -o+w 2>/dev/null
 ```
 
-参考: https://academy.hackthebox.eu/course/preview/linux-privilege-escalation/introduction-to-linux-privilege-escalation
+参考:
+
+- https://academy.hackthebox.eu/course/preview/linux-privilege-escalation/introduction-to-linux-privilege-escalation
+
+ツール利用
+
+- [PEASS](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
+
+  - 設定ファイルやログを検索して、利用できそうな項目の一覧表示が可能
+
+```
+chmod +x linpeas.sh
+./linpeas.sh -a
+```
+
+```
+[+] Finding 'username' string inside key folders (limit 70)
+/etc/supervisord.conf:username = user
+
+[+] Searching specific hashes inside files - less false positives (limit 70)
+/var/www/.htpasswd:$1$xxxxxxxxxXXXXXXXXXXXXXXXXX
+
+/home/user/public/.htpasswd:$1$xxxxxxxxxXXXXXXXXXXXXXXXXX
+/home/user/dev/www/.htpasswd:$1$xxxxxxxxxXXXXXXXXXXXXXXXXX
+```
 
 ## RSA
 
@@ -394,6 +418,10 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 - CyberChef: https://gchq.github.io/CyberChef/
 - Request Bin: https://requestbin.com/
 - IP アドレス情報: https://ip-api.com/
+
+**Scripts**
+
+- PEASS: https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
 
 **Documents**
 
