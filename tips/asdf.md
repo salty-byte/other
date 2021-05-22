@@ -1,5 +1,7 @@
 # asdf tips
 
+## コマンド
+
 **基本**
 
 commands: https://asdf-vm.com/#/core-commands
@@ -56,4 +58,59 @@ Install PHP:
 asdf plugin add php
 asdf install php 8.0.2
 asdf global php 8.0.2
+```
+
+## インストール
+
+**システムワイドインストール**
+
+依存ツールのインストール
+
+```
+sudo apt install curl git
+```
+
+GitHub から asdf (v0.8.1) のクローン
+
+```
+sudo git clone https://github.com/asdf-vm/asdf.git /usr/local/asdf --branch v0.8.1
+```
+
+管理グループの設定
+
+```
+sudo groupadd asdf
+sudo chgrp -R asdf /usr/local/asdf
+sudo chmod -R g+rwXs /usr/local/asdf
+sudo gpasswd -a foo asdf
+```
+
+環境変数の設定
+
+```
+sudo vi /etc/profile.d/asdf.sh
+```
+
+`/etc/profile.d/asdf.sh`:
+
+```
+export ASDF_DIR=/usr/local/asdf
+export ASDF_DATA_DIR=$ASDF_DIR
+
+ASDF_BIN="${ASDF_DIR}/bin"
+ASDF_USER_SHIMS="${ASDF_DATA_DIR}/shims"
+PATH="${ASDF_BIN}:${ASDF_USER_SHIMS}:${PATH}"
+
+. "${ASDF_DIR}/lib/asdf.sh"
+. "${ASDF_DIR}/completions/asdf.bash"
+```
+
+```
+source /etc/profile.d/asdf.sh
+```
+
+確認
+
+```
+asdf --version
 ```
