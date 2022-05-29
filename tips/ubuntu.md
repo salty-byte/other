@@ -18,3 +18,22 @@ chmod -x program
 sudo apt update
 sudo apt install libc6-i386 -y
 ```
+
+## SSH
+
+SSHトンネル経由のポートフォワーディング設定(~/.ssh/config)
+
+```
+Host humidai
+    HostName xxx.xxx.xxx.xxx
+    Port 22
+    User userXXX
+    ForwardAgent yes
+
+Host target
+    Hostname 192.168.0.1
+    Port 22
+    User userYYY
+    ProxyCommand ssh -W %h:%p -L 80:localhost:80 humidai
+    LocalForward 80 localhost:80
+```
